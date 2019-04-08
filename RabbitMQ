@@ -1,1 +1,19 @@
+1.RabbitMQ Server
+  RabbitMQ is not a food truck, it is a deliver service.
+  它不是一个运送食物的卡车，而是一种传输服务。
 
+2.RabbitMQ的主要角色
+
+  Producer：生产者，消息来源；
+  Exchanges：路由器，负责分发Producer生产的消息到对应的消息队列；
+  Queue:消息队列，用来存储消息；
+  Bindings：绑定Exchanges和Queue；
+  Consumer：消费者，处理消息；
+
+  Connection：就是一个TCP连接。Producer和Consumer是通过TCP连接到RabbitMQ Server的。
+  Channels：虚拟连接。建立在Connction的TCP连接中。数据流动都是在Channel中的，在客户端的每个连接里可以建立多个Channel，每个Channel代表一个会话。
+            一般来说，程序开始先建立TCP连接，第二步就是建立这个Channel。
+  Routing Key：路由关键字，exchanges根据路由关键字来进行消息投递。
+  由Exchange，Queue，Routing Key三个才能保证从Exchange到Queue的唯一路线。
+  
+3.基本概念 
